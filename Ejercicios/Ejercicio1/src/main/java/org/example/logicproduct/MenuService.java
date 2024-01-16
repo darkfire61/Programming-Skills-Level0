@@ -33,7 +33,10 @@ public class MenuService {
                     System.out.print("Quiere realizar esta operacion: S/N\n");
                     finOperation = reader.readLine();
                     if (finOperation.equals("S")) {
-                        money = money + depositMoney;
+                        if(money >= depositMoney)
+                            money = money + depositMoney;
+                        else
+                            System.out.print("El monto ingresado es menor al saldo actual.");
                         System.out.print("Quiere realizar otra operacion: S/N\n");
                         finService = reader.readLine();
                         if (finService.equals("S")) {
@@ -50,7 +53,10 @@ public class MenuService {
                     System.out.print("Quiere realizar esta operacion: S/N\n");
                     finOperation = reader.readLine();
                     if (finOperation.equals("S")) {
-                        money = money - withdrawMoney;
+                        if(money >= withdrawMoney)
+                            money = money + withdrawMoney;
+                        else
+                            System.out.print("El monto ingresado es menor al saldo actual.");
                         System.out.print("Quiere realizar otra operacion: S/N\n");
                         finService = reader.readLine();
                         if (finService.equals("S")) {
@@ -77,7 +83,10 @@ public class MenuService {
                     System.out.print("Ingrese el numero de cuenta a transferir: ");
                     String account = reader.readLine();
                     if(finOperation.equals("S")) {
-                        money = money - transferMoney;
+                        if(money >= transferMoney)
+                            money = money + transferMoney;
+                        else
+                            System.out.print("El monto ingresado es menor al saldo actual.");
                         System.out.print("Quiere realizar otra operacion: S/N\n");
                         finService = reader.readLine();
                         if (finService.equals("S")) {
